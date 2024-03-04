@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Csharp_Projects\\To_do_list\\ToDoList\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AFB2DA65-7D68-42C4-BE82-F862DE074320}|ToDoList.csproj|c:\\csharp_projects\\to_do_list\\todolist\\services\\taskservices\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFB2DA65-7D68-42C4-BE82-F862DE074320}|ToDoList.csproj|solutionrelative:services\\taskservices\\taskservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFB2DA65-7D68-42C4-BE82-F862DE074320}|ToDoList.csproj|c:\\csharp_projects\\to_do_list\\todolist\\services\\taskservices\\itaskinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFB2DA65-7D68-42C4-BE82-F862DE074320}|ToDoList.csproj|solutionrelative:services\\taskservices\\itaskinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFB2DA65-7D68-42C4-BE82-F862DE074320}|ToDoList.csproj|c:\\csharp_projects\\to_do_list\\todolist\\models\\taskmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFB2DA65-7D68-42C4-BE82-F862DE074320}|ToDoList.csproj|solutionrelative:models\\taskmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskService.cs",
+              "DocumentMoniker": "C:\\Csharp_Projects\\To_do_list\\ToDoList\\Services\\TaskServices\\TaskService.cs",
+              "RelativeDocumentMoniker": "Services\\TaskServices\\TaskService.cs",
+              "ToolTip": "C:\\Csharp_Projects\\To_do_list\\ToDoList\\Services\\TaskServices\\TaskService.cs",
+              "RelativeToolTip": "Services\\TaskServices\\TaskService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T00:54:40.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ITaskInterface.cs",
+              "DocumentMoniker": "C:\\Csharp_Projects\\To_do_list\\ToDoList\\Services\\TaskServices\\ITaskInterface.cs",
+              "RelativeDocumentMoniker": "Services\\TaskServices\\ITaskInterface.cs",
+              "ToolTip": "C:\\Csharp_Projects\\To_do_list\\ToDoList\\Services\\TaskServices\\ITaskInterface.cs",
+              "RelativeToolTip": "Services\\TaskServices\\ITaskInterface.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T00:54:39.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskModel.cs",
+              "DocumentMoniker": "C:\\Csharp_Projects\\To_do_list\\ToDoList\\Models\\TaskModel.cs",
+              "RelativeDocumentMoniker": "Models\\TaskModel.cs",
+              "ToolTip": "C:\\Csharp_Projects\\To_do_list\\ToDoList\\Models\\TaskModel.cs",
+              "RelativeToolTip": "Models\\TaskModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T22:35:37.931Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
