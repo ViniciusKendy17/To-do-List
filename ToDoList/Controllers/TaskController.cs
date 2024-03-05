@@ -17,14 +17,15 @@ namespace ToDoList.Controllers
         
 
         [HttpPost]
-        [Route("CreateTask")]
-        public async Task<ActionResult<ServiceResponse<List<TaskModel>>>> CreateTask()
+        
+        public async Task<ActionResult<ServiceResponse<List<TaskModel>>>> CreateTask(TaskModel task)
         {
-            return Ok(await taskInterface.CreateTask());
+
+            return Ok(await taskInterface.CreateTask(task));
         }
 
         [HttpDelete]
-        [Route("DeleteTask")]
+        
         public void DeleteTask()
         {
             

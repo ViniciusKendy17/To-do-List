@@ -11,6 +11,11 @@ namespace ToDoList.Models
 
         }
         public DbSet<TaskModel> Tasks { get; set; }
+
+        internal void Add<T>(TaskModel task)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
