@@ -1,5 +1,6 @@
 ﻿using ToDoList.Models;
 
+
 namespace ToDoList.Services.TaskServices
 {
     public class TaskService : ITaskInterface
@@ -13,19 +14,17 @@ namespace ToDoList.Services.TaskServices
 
         public Task<ServiceResponse<List<TaskModel>>> CreateTask(TaskModel task)
         {
-            throw new NotImplementedException();
+            
         }
 
-        public Task<ServiceResponse<List<TaskModel>>> DeleteTask(TaskModel task)
+        public Task<ServiceResponse<List<TaskModel>>> DeleteTask(int taskId)
         {
             throw new NotImplementedException();
         }
 
-        public Task<ServiceResponse<TaskModel>> GetTaskById(string taskId)
+        public Task<ServiceResponse<List<TaskModel>>> FinishTask(int taskId)
         {
-
             throw new NotImplementedException();
-
         }
 
         public Task<ServiceResponse<List<TaskModel>>> UpdateTask(TaskModel task)

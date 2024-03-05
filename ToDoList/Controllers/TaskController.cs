@@ -8,13 +8,19 @@ namespace ToDoList.Controllers
     [Route("task/")]
     public class TaskController : ControllerBase
     {
+        private readonly ITaskInterface taskInterface;
+
+        public TaskController(ITaskInterface taskInterface)
+        {
+            this.taskInterface = taskInterface;
+        }
         
 
         [HttpPost]
         [Route("CreateTask")]
-        public string Retornarpalavra()
+        public async Task<ActionResult<ServiceResponse<List<TaskModel>>>> CreateTask()
         {
-            return "Hello man";
+            return Ok(await taskInterface.CreateTask());
         }
 
         [HttpDelete]
@@ -28,6 +34,13 @@ namespace ToDoList.Controllers
         [Route("UpdateTask")]
         public void UpdateTask()
         {
+
+        }
+
+        [HttpDelete]
+        [Route("FinishTask")]
+
+        public void FinishTask(){
 
         }
 

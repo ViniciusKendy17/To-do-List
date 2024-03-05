@@ -8,8 +8,8 @@ namespace ToDoList.Services.TaskServices
 
         Task<ServiceResponse<List<TaskModel>>> UpdateTask(TaskModel task);
 
-        Task<ServiceResponse<List<TaskModel>>> DeleteTask (TaskModel task);
+        Task<ServiceResponse<List<TaskModel>>> DeleteTask (int taskId);
 
-        Task <ServiceResponse<TaskModel>> GetTaskById (string taskId);
+       Task<ServiceResponse<List<TaskModel>>> FinishTask (int taskId);
     }
 }
