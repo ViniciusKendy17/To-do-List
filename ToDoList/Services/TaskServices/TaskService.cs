@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
 using ToDoList.Models;
+using Xunit.Sdk;
 
 
 namespace ToDoList.Services.TaskServices
@@ -17,26 +20,21 @@ namespace ToDoList.Services.TaskServices
         {
             ServiceResponse<List<TaskModel>> serviceresponse = new ServiceResponse<List<TaskModel>>();
             
-            if (task == null) 
-            {
-                Console.WriteLine("Something went wrong");
-            } 
-
-            try
-            {
+           try{
+           
                 _context.Add(task);
                 await _context.SaveChangesAsync();
 
-                serviceresponse.data = _context.Tasks.ToList();
-                
-                
-            }
-            catch(Exception ex)
-            {
-                serviceresponse.message = "Something wrong by trying to add a new task";
-            }
-            return serviceresponse;
+                serviceresponse.data = await _context.tarefa.ToListAsync();         
+           }
+           catch(NullException ex)
+           {
+                serviceresponse.success = false;
+                serviceresponse.message = $"Null value not allowed {ex.Message}"; 
+           }
 
+           return serviceresponse;
+  
         }
 
         public Task<ServiceResponse<List<TaskModel>>> DeleteTask(int taskId)
