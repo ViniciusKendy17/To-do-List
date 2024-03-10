@@ -17,6 +17,7 @@ namespace ToDoList.Controllers
         
 
         [HttpPost]
+        [Route("add-task")]
         
         public async Task<ActionResult<ServiceResponse<List<TaskModel>>>> CreateTask(TaskModel task)
         {
@@ -25,10 +26,12 @@ namespace ToDoList.Controllers
         }
 
         [HttpDelete]
-        
-        public void DeleteTask()
+        [Route("delete/{id}")]
+        public async Task<ActionResult<ServiceResponse<List<TaskModel>>>> DeleteTask(int id)
         {
-            
+            ServiceResponse<List<TaskModel>> serviceResponse = await taskInterface.DeleteTask(id);
+
+            return Ok(serviceResponse);
         }
 
         [HttpPut]

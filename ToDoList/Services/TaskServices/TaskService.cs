@@ -37,9 +37,35 @@ namespace ToDoList.Services.TaskServices
   
         }
 
-        public Task<ServiceResponse<List<TaskModel>>> DeleteTask(int taskId)
+        public async Task<ServiceResponse<List<TaskModel>>> DeleteTask(int taskId)
         {
-            throw new NotImplementedException();
+              ServiceResponse<List<TaskModel>> serviceresponse = new ServiceResponse<List<TaskModel>>();
+
+              try
+              {
+                TaskModel task = _context.tarefa.FirstOrDefault(x => x.id == taskId);
+                
+                if(task == null)
+                {
+                    serviceresponse.message = "This task does not exist.";
+                    serviceresponse.success = false;
+                    serviceresponse.data = null;
+
+                    return serviceresponse;
+                }
+
+                    _context.tarefa.Remove(task);
+                    await _context.SaveChangesAsync();
+
+                    serviceresponse.data = await _context.tarefa.ToListAsync();          
+
+              }
+              catch(Exception)
+              {
+                    serviceresponse.message = "It wasn't possible to remove the task that you wanted to";
+                    serviceresponse.success = false;
+              }
+                        return serviceresponse;
         }
 
         public Task<ServiceResponse<List<TaskModel>>> FinishTask(int taskId)
