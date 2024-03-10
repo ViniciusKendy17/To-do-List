@@ -47,7 +47,7 @@ namespace ToDoList.Controllers
         }
 
         //Same as the DeleteTask, but instead of deleting, it is "finishing" it 
-        [HttpDelete]
+        [httpPut]
         [Route("FinishTask/{id}")]
 
         public async Task<ActionResult<ServiceResponse<List<TaskModel>>>> FinishTask(int id)
