@@ -15,7 +15,7 @@ namespace ToDoList.Controllers
             this.taskInterface = taskInterface;
         }
         
-
+        //Add a task in the database
         [HttpPost]
         [Route("add-task")]
         
@@ -25,6 +25,7 @@ namespace ToDoList.Controllers
             return Ok(await taskInterface.CreateTask(task));
         }
 
+        //Delete a task specified by a id
         [HttpDelete]
         [Route("delete/{id}")]
         public async Task<ActionResult<ServiceResponse<List<TaskModel>>>> DeleteTask(int id)
@@ -34,18 +35,26 @@ namespace ToDoList.Controllers
             return Ok(serviceResponse);
         }
 
+        //Update a task
         [HttpPut]
         [Route("UpdateTask")]
-        public void UpdateTask()
+        public async Task<ActionResult<ServiceResponse<List<TaskModel>>>>  UpdateTask(TaskModel task)
         {
+            ServiceResponse<List<TaskModel>> serviceResponse = await taskInterface.UpdateTask(task);
+
+            return Ok(serviceResponse);
 
         }
 
+        //Same as the DeleteTask, but instead of deleting, it is "finishing" it 
         [HttpDelete]
-        [Route("FinishTask")]
+        [Route("FinishTask/{id}")]
 
-        public void FinishTask(){
+        public async Task<ActionResult<ServiceResponse<List<TaskModel>>>> FinishTask(int id)
+        {
+             ServiceResponse<List<TaskModel>> serviceResponse = await taskInterface.DeleteTask(id);
 
+            return Ok(serviceResponse);
         }
 
       

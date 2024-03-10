@@ -65,17 +65,70 @@ namespace ToDoList.Services.TaskServices
                     serviceresponse.message = "It wasn't possible to remove the task that you wanted to";
                     serviceresponse.success = false;
               }
+                    return serviceresponse;
+        }
+
+        public async Task<ServiceResponse<List<TaskModel>>> FinishTask(int taskId)
+        {
+             ServiceResponse<List<TaskModel>> serviceresponse = new ServiceResponse<List<TaskModel>>();
+
+              try
+              {
+                TaskModel task = _context.tarefa.FirstOrDefault(x => x.id == taskId);
+                
+                if(task == null)
+                {
+                    serviceresponse.message = "This task does not exist.";
+                    serviceresponse.success = false;
+                    serviceresponse.data = null;
+
+                    return serviceresponse;
+                }
+
+                    _context.tarefa.Remove(task);
+                    await _context.SaveChangesAsync();
+
+                    serviceresponse.data = await _context.tarefa.ToListAsync();          
+
+              }
+              catch(Exception)
+              {
+                    serviceresponse.message = "It wasn't possible to finish the task that you wanted to";
+                    serviceresponse.success = false;
+              }
                         return serviceresponse;
         }
 
-        public Task<ServiceResponse<List<TaskModel>>> FinishTask(int taskId)
+        public async Task<ServiceResponse<List<TaskModel>>> UpdateTask(TaskModel taskup)
         {
-            throw new NotImplementedException();
-        }
+            ServiceResponse<List<TaskModel>> serviceResponse = new ServiceResponse<List<TaskModel>>(); 
 
-        public Task<ServiceResponse<List<TaskModel>>> UpdateTask(TaskModel task)
-        {
-            throw new NotImplementedException();
+            try
+            {
+                TaskModel task = _context.tarefa.FirstOrDefault(x => x.id == taskup.id);
+
+                  if(task == null)
+                {
+                    serviceResponse.message = "This task does not exist.";
+                    serviceResponse.success = false;
+                    serviceResponse.data = null;             
+                }
+                
+                _context.tarefa.Update(task);
+                
+                  await _context.SaveChangesAsync();
+
+                serviceResponse.data =  _context.tarefa.ToList(); 
+
+            }
+            catch(Exception)
+            {
+                serviceResponse.message = "It wasn't possible to update the task that you wanted to";
+                serviceResponse.success = false;
+            }
+
+            return serviceResponse;
+
         }
     }
 }
