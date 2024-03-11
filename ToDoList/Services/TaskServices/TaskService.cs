@@ -27,10 +27,10 @@ namespace ToDoList.Services.TaskServices
 
                 serviceresponse.data = await _context.tarefa.ToListAsync();         
            }
-           catch(NullException ex)
+           catch(Exception ex)
            {
                 serviceresponse.success = false;
-                serviceresponse.message = $"Null value not allowed {ex.Message}"; 
+                serviceresponse.message = ex.Message; 
            }
 
            return serviceresponse;
@@ -43,7 +43,9 @@ namespace ToDoList.Services.TaskServices
 
               try
               {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 TaskModel task = _context.tarefa.FirstOrDefault(x => x.id == taskId);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
                 
                 if(task == null)
                 {
@@ -60,9 +62,9 @@ namespace ToDoList.Services.TaskServices
                     serviceresponse.data = await _context.tarefa.ToListAsync();          
 
               }
-              catch(Exception)
+              catch(Exception ex)
               {
-                    serviceresponse.message = "It wasn't possible to remove the task that you wanted to";
+                    serviceresponse.message = ex.Message;
                     serviceresponse.success = false;
               }
                     return serviceresponse;
@@ -74,7 +76,9 @@ namespace ToDoList.Services.TaskServices
 
               try
               {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
                 TaskModel task = _context.tarefa.FirstOrDefault(x => x.id == taskId);
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
                 
                 if(task == null)
                 {
@@ -91,9 +95,9 @@ namespace ToDoList.Services.TaskServices
                     serviceresponse.data = await _context.tarefa.ToListAsync();          
 
               }
-              catch(Exception)
+              catch(Exception ex )
               {
-                    serviceresponse.message = "It wasn't possible to finish the task that you wanted to";
+                    serviceresponse.message = ex.Message ;
                     serviceresponse.success = false;
               }
                         return serviceresponse;
@@ -101,33 +105,37 @@ namespace ToDoList.Services.TaskServices
 
         public async Task<ServiceResponse<List<TaskModel>>> UpdateTask(TaskModel taskup)
         {
-            ServiceResponse<List<TaskModel>> serviceResponse = new ServiceResponse<List<TaskModel>>(); 
+            ServiceResponse<List<TaskModel>> serviceresponse = new ServiceResponse<List<TaskModel>>(); 
 
             try
             {
-                TaskModel task = _context.tarefa.FirstOrDefault(x => x.id == taskup.id);
 
-                  if(task == null)
+                TaskModel task = _context.tarefa.AsNoTracking().FirstOrDefault(x => x.id == taskup.id);
+
+
+                if(task == null)
                 {
-                    serviceResponse.message = "This task does not exist.";
-                    serviceResponse.success = false;
-                    serviceResponse.data = null;             
+                     serviceresponse.data = null;  
+                    serviceresponse.message = "This task does not exist.";
+                    serviceresponse.success = false;      
+            
                 }
-                
-                _context.tarefa.Update(task);
+
+                 _context.tarefa.Update(taskup);
+
                 
                   await _context.SaveChangesAsync();
 
-                serviceResponse.data =  _context.tarefa.ToList(); 
+                serviceresponse.data =  _context.tarefa.ToList(); 
 
             }
-            catch(Exception)
+            catch(Exception ex )
             {
-                serviceResponse.message = "It wasn't possible to update the task that you wanted to";
-                serviceResponse.success = false;
+                serviceresponse.message = ex.Message;
+                serviceresponse.success = false;
             }
 
-            return serviceResponse;
+            return serviceresponse;
 
         }
     }
