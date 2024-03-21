@@ -10,7 +10,9 @@ namespace ToDoList.Models
         {
 
         }
-        public DbSet<TaskModel> Tasks { get; set; }
+        public DbSet<TaskModel> tarefa { get; set; }
+
+       
     }
 
 }
