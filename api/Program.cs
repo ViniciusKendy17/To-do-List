@@ -13,14 +13,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//What i added start in the next line:
 builder.Services.AddCors();
 builder.Services.AddScoped<ITaskInterface, TaskService>();
 builder.Services.AddDbContext<DBContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("ConexaoDb"));
 });
-
-
+//next lines are default
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
