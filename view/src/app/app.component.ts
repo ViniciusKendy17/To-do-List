@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Front_ToDoList';
+  title = 'view';
   http = inject(HttpClient);
   url = 'https://localhost:7257'
 }
