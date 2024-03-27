@@ -3127,11 +3127,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vinic\\OneDrive\\Documents\\GitHub\\To-do-List\\ToDoList\\ToDoList.csproj",
+      "projectUniqueName": "C:\\Users\\vinic\\OneDrive\\Documents\\GitHub\\To-do-List\\api\\ToDoList.csproj",
       "projectName": "ToDoList",
-      "projectPath": "C:\\Users\\vinic\\OneDrive\\Documents\\GitHub\\To-do-List\\ToDoList\\ToDoList.csproj",
+      "projectPath": "C:\\Users\\vinic\\OneDrive\\Documents\\GitHub\\To-do-List\\api\\ToDoList.csproj",
       "packagesPath": "C:\\Users\\vinic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vinic\\OneDrive\\Documents\\GitHub\\To-do-List\\ToDoList\\obj\\",
+      "outputPath": "C:\\Users\\vinic\\OneDrive\\Documents\\GitHub\\To-do-List\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "packageManager": "npm"
-  },
   "newProjectRoot": "projects",
   "projects": {
-    "Front_ToDoList": {
+    "views": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -16,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/front-to-do-list",
+            "outputPath": "dist/views",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -65,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Front_ToDoList:build:production"
+              "buildTarget": "views:build:production"
             },
             "development": {
-              "buildTarget": "Front_ToDoList:build:development"
+              "buildTarget": "views:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Front_ToDoList:build"
+            "buildTarget": "views:build"
           }
         },
         "test": {

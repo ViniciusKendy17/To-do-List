@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'Front_ToDoList' title`, () => {
+  it(`should have the 'views' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Front_ToDoList');
+    expect(app.title).toEqual('views');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Front_ToDoList');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, views');
   });
 });
