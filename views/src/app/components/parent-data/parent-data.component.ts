@@ -9,8 +9,6 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ParentDataComponent implements OnInit {
 
-  @Input () nome : string = "";
-
   constructor(){}
 
   ngOnInit(): void {
