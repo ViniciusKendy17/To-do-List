@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Console } from 'node:console';
 
 @Component({
   selector: 'app-parent-data',
@@ -8,6 +9,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrl: './parent-data.component.css'
 })
 export class ParentDataComponent implements OnInit {
+  @Output() clickNumber: EventEmitter<any> =  new EventEmitter();
+
+  number: number = 0;
 
   constructor(){}
 
@@ -17,6 +21,10 @@ export class ParentDataComponent implements OnInit {
 
   ShowingMessage(): void{
     
+  }
+
+  handleclick(){
+    this.number++;
   }
   
 }
