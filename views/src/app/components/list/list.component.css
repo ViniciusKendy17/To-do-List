@@ -1,0 +1,11 @@
+#out-list{
+    width:600px ;
+    height:400px ;
+    border: red solid 2px;
+    border-radius: 10px;
+}
+
+h2{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
